@@ -124,7 +124,8 @@ static void cleanupCocoaApplicationDelegate()
     [dockMenu release];
     [qtMenuLoader release];
     if (reflectionDelegate) {
-        [NSApp setDelegate:reflectionDelegate];
+        //[NSApp setDelegate:reflectionDelegate];
+        [[NSApplication sharedApplication] setDelegate:reflectionDelegate];
         [reflectionDelegate release];
     }
     [[NSNotificationCenter defaultCenter] removeObserver:self];
